@@ -1,3 +1,6 @@
+import numpy as np
+from scipy.spatial.distance import directed_hausdorff
+from scipy.ndimage import binary_erosion, distance_transform_edt, generate_binary_structure
 def hd(img,gt):
     img,gt=np.atleast_1d(img.astype(np.bool_)),np.atleast_1d(gt.astype(np.bool_))
     footprint = generate_binary_structure(img.ndim, 1)
